@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint --fix src/**/*.js",
     "precommit": "lint-staged",
-    "dev": "webpack"
+    "dev": "webpack",
+    "test": "ava"
   },
   "lint-staged": {
     "*.{js, vue}": [
@@ -15,6 +16,7 @@
     ]
   },
   "devDependencies": {
+    "ava": "^0.25.0",
     "babel-eslint": "7",
     "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "^12.1.0",
@@ -25,6 +27,7 @@
     "eslint-plugin-vue": "^4.2.0",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
+    "memory-fs": "^0.4.1",
     "prettier": "^1.9.2",
     "prettier-eslint": "^8.7.1",
     "prettier-eslint-cli": "^4.7.0",
