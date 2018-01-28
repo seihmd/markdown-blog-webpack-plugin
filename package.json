@@ -36,6 +36,7 @@
   "dependencies": {
     "glob": "^7.1.2",
     "gray-matter": "^3.1.1",
+    "schema-utils": "^0.4.3",
     "virtual-module-webpack-plugin": "^0.3.0"
   }
 }

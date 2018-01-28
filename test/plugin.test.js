@@ -24,7 +24,7 @@ function getConfig(option) {
 test.cb('output stats', t => {
   const pluginOption = {
     statsModule: path.resolve(__dirname, 'build/blogstats.js'),
-    postsPattern: path.resolve(__dirname, 'posts/**/*.md'),
+    postRoot: path.resolve(__dirname, 'posts'),
     aggs: ['tags', 'category']
   };
   const webpackConf = getConfig(pluginOption);
@@ -37,7 +37,7 @@ test.cb('output stats', t => {
     const html = stats.compilation.assets['bundle.js'].source();
     t.truthy(
       html.includes(
-        '{"list":[{"title":"this is a test with js-front-matter","tags":["common-tag","js-tag"],"category":["common-cate","js-cate"],"date":"2018-01-02"},{"title":"this is a test with json-front-matter","tags":["common-tag","json-tag"],"category":["common-cate","json-cate"],"date":"2018-01-03"},{"title":"this is a test under subdir","tags":["common-tag","subdir-tag"],"category":["common-cate"],"date":"2018-01-04"},{"title":"this is a test with yaml-front-matter","tags":["common-tag","yaml-tag"],"category":["common-cate","yaml-cate"],"date":"2018-01-01"}],"aggs":{"tags":[{"attr":"common-tag","count":4},{"attr":"js-tag","count":1},{"attr":"json-tag","count":1},{"attr":"subdir-tag","count":1},{"attr":"yaml-tag","count":1}],"category":[{"attr":"common-cate","count":4},{"attr":"js-cate","count":1},{"attr":"json-cate","count":1},{"attr":"yaml-cate","count":1}]}}'
+        '{"list":[{"title":"this is a test with js-front-matter","tags":["common-tag","js-tag"],"category":["common-cate","js-cate"],"date":"2018-01-02","path":"js_post.md"},{"title":"this is a test with json-front-matter","tags":["common-tag","json-tag"],"category":["common-cate","json-cate"],"date":"2018-01-03","path":"json_post.md"},{"title":"this is a test under subdir","tags":["common-tag","subdir-tag"],"category":["common-cate"],"date":"2018-01-04","path":"subdir/test.md"},{"title":"this is a test with yaml-front-matter","tags":["common-tag","yaml-tag"],"category":["common-cate","yaml-cate"],"date":"2018-01-01","path":"yaml_post.md"}],"aggs":{"tags":[{"attr":"common-tag","count":4},{"attr":"js-tag","count":1},{"attr":"json-tag","count":1},{"attr":"subdir-tag","count":1},{"attr":"yaml-tag","count":1}],"category":[{"attr":"common-cate","count":4},{"attr":"js-cate","count":1},{"attr":"json-cate","count":1},{"attr":"yaml-cate","count":1}]}}'
       )
     );
     t.end();
