@@ -9,7 +9,8 @@ module.exports = {
   ],
   "plugins": ["prettier", "filenames"],
   "rules": {
-  "no-unused-vars": ["error", {
+    "no-param-reassign": ["error", { "props": false }],
+    "no-unused-vars": ["error", {
       "args": "none"
     }],
     "filenames/match-regex": [2, "^[a-zA-Z0-9.]+$", true],
