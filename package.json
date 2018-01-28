@@ -1,5 +1,5 @@
 {
-  "name": "mdblog-webpack-plugin",
+  "name": "markdown-blog-webpack-plugin",
   "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
