@@ -1,3 +1,3 @@
 /* eslint-disable */
 
-import blogstats from 'build/blogstats';
+import blogstats from '../build/blogstats';
