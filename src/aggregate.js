@@ -3,7 +3,7 @@
  * @param  {array} aggAttrs
  * @return {Object} preparedAggs { aggAttr: [overlapped items] }
  */
-function prepareAggs(data, aggAttrs) {
+function prepareAggs(data, aggAttrs = []) {
   const aggValues = {};
   data.forEach(postdata => {
     aggAttrs.forEach(aggAttr => {
